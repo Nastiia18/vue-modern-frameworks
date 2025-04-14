@@ -52,6 +52,8 @@ const addItem = () => {
     >
       <div v-for="(item, index) in shoppingList" :key="item.id">
         <v-list-item @click="doneBought(item.id)" :class="{ 'blue lighten-5': item.bought }">
+
+          <div class="item-row">
           <v-list-item-action start>
             <v-checkbox v-model="item.bought" />
           </v-list-item-action>
@@ -59,12 +61,12 @@ const addItem = () => {
             {{ item.title }}
           </v-list-item-title>
 
-          <!-- Кнопка для видалення -->
           <v-list-item-action end class="ms-auto">
             <v-btn icon @click.stop="deleteItem(item.id)">
               <v-icon>mdi-delete</v-icon>
             </v-btn>
           </v-list-item-action>
+          </div>
         </v-list-item>
         <v-divider v-if="index < shoppingList.length - 1" />
       </div>
@@ -76,8 +78,9 @@ const addItem = () => {
 .wide-list {
   width: 400px;
 }
-
-.v-list-item {
-  padding: 12px 16px;
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 </style>

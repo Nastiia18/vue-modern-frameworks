@@ -5,21 +5,21 @@
       <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
       <v-divider></v-divider>
       <v-list>
+        <v-list-item link title="List" to="/">
+          <template v-slot:prepend>
+            <v-icon>mdi-format-list-checks</v-icon>
+          </template>
+        </v-list-item>
+
         <v-list-item link title="About" to="/about">
           <template v-slot:prepend>
             <v-icon>mdi-information</v-icon>
           </template>
         </v-list-item>
 
-        <v-list-item link title="Contents" to="/contents">
+        <v-list-item link title="My group" to="/my-group">
           <template v-slot:prepend>
             <v-icon>mdi-book-open-page-variant</v-icon>
-          </template>
-        </v-list-item>
-
-        <v-list-item link title="List Item 3">
-          <template v-slot:prepend>
-            <v-icon>mdi-format-list-checks</v-icon>
           </template>
         </v-list-item>
       </v-list>
